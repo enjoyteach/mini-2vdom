@@ -12,7 +12,7 @@ function propsParser(propsStr) {
     scanner.scan('="');
 
     const val = scanner.scanUntil('"');
-    props[key] = val;
+    props[key] = val || true;
     scanner.scan('"');
   }
 
