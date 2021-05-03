@@ -1,0 +1,96 @@
+## 介绍
+
+将html字符串转换为虚拟dom的小工具
+
+## 使用
+
+```HTML
+<script src="/mini-2vdom.js"></script>
+
+<script type="text/template" id="tplt">
+  <div 
+    class="container menu" 
+    id="main"
+  >
+    <h3 class="title">菜单</h3>
+    <ul class="list" style="width: 300px; color: red; border: 1px solid #fff;">
+      <li>宫保鸡丁<span class="del">&times;</span></li>
+      <li>鱼香肉丝<span class="del">&times;</span></li>
+    </ul>
+  </div>
+</script>
+
+<script>
+  toVDOM(document.getElementById('tplt').innerHTML);
+</script>
+```
+
+转换结果
+
+```javascript
+{
+  sel: "div"
+  data: {
+    class: {
+      container: true,
+      menu: true
+    }, 
+    id: "main"
+  },
+  children: [
+    {
+      sel: "h3",
+      data: {
+        class: {
+          title: true
+        }
+      },
+      text: "菜单"
+    }, 
+    {
+      sel: "ul",
+      data: {
+        class: {
+          list: true
+        },
+        style: {
+          border: "1px solid #fff",
+          color: "red",
+          width: "300px",
+        }
+      },
+      children: [
+        {
+          sel: "li",
+          children: [{
+            sel: "span",
+            data: {
+              class: {
+                del: true
+              }
+            },
+            text: "&times;"
+          }],
+          data: {},
+          text: "宫保鸡丁"
+        },
+        {
+          sel: "li",
+          children: [{
+            sel: "span",
+            data: {
+              class: {
+                del: true
+              }
+            },
+            text: "&times;"
+          }],
+          data: {},
+          text: "鱼香肉丝"
+        }
+      ]
+    }
+  ]
+}
+
+```

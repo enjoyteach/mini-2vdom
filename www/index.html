@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="/public/mini-2vdom.js"></script>
+
+  <script type="text/template" id="tplt">
+    <div 
+      class="container menu" 
+      id="main"
+    >
+      <h3 class="title">菜单</h3>
+      <ul class="list" style="width: 300px; color: red; border: 1px solid #fff;">
+        <li>宫保鸡丁<span class="del">&times;</span></li>
+        <li>鱼香肉丝<span class="del">&times;</span></li>
+      </ul>
+    </div>
+  </script>
+
+  <script>
+    console.log(toVDOM(document.getElementById('tplt').innerHTML));;
+  </script>
+</body>
+
+</html>
