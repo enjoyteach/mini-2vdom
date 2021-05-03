@@ -27,6 +27,12 @@ function tokens2vdom(tokens) {
       vdom['data']['style'] = styleParser(vdom['data']['style']);
     }
 
+    // 添加key
+    if (vdom['data']['key']) {
+      vdom['key'] = vdom['data']['key'];
+      delete vdom['data']['key'];
+    }
+
     if (token[4]) {
       vdom['text'] = token[token.length - 1];
     }
