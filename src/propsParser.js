@@ -2,14 +2,13 @@ import Scanner from './Scanner';
 
 function propsParser(propsStr) {
   propsStr = propsStr.trim();
-
   const scanner = new Scanner(propsStr);
-
   const props = {};
 
   while(!scanner.eos()) {
     let key = scanner.scanUntil('=');
 
+    // 对单属性的处理
     const spaceIdx = key.indexOf(' ');
     if (spaceIdx !== -1) {
       const k = key.replace(/\s+/g, ' ')
