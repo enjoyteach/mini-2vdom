@@ -36,10 +36,11 @@ function tokens2vdom(tokens) {
     if (token[4]) {
       vdom['text'] = token[token.length - 1];
     }
-    vdom['children'] = [];
     
     const children = isArray(token[2]) ? token[2] : token[3];
     if (!children) continue;
+
+    vdom['children'] = [];
 
     for (let j = 0; j < children.length; j++) {
       vdom['children'].push(tokens2vdom([children[j]]));

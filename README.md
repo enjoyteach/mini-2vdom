@@ -17,9 +17,9 @@
     id="main"
   >
     <h3 class="title">菜单</h3>
-    <ul class="list" style="width: 300px; color: red; border: 1px solid #fff;">
-      <li>宫保鸡丁<span class="del">&times;</span></li>
-      <li>鱼香肉丝<span class="del">&times;</span></li>
+    <ul loading class="list" style="width: 300px; color: red; border: 1px solid #fff;">
+      <li key="1">宫保鸡丁<span class="del">&times;</span></li>
+      <li key="2">鱼香肉丝<span class="del">&times;</span></li>
     </ul>
   </div>
 </script>
@@ -57,6 +57,7 @@
         class: {
           list: true
         },
+        loading: true,
         style: {
           border: "1px solid #fff",
           color: "red",
@@ -66,6 +67,7 @@
       children: [
         {
           sel: "li",
+          key: "1",
           children: [{
             sel: "span",
             data: {
@@ -80,6 +82,7 @@
         },
         {
           sel: "li",
+          key: "2",
           children: [{
             sel: "span",
             data: {

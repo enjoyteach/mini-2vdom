@@ -8,7 +8,15 @@ function propsParser(propsStr) {
   const props = {};
 
   while(!scanner.eos()) {
-    const key = scanner.scanUntil('=');
+    let key = scanner.scanUntil('=');
+
+    const spaceIdx = key.indexOf(' ');
+    if (spaceIdx !== -1) {
+      const k = key.replace(/\s+/g, ' ')
+         .split(' ')[0]
+      props[k] = true;
+      key = key.substring(spaceIdx).trim();
+    }
     scanner.scan('="');
 
     const val = scanner.scanUntil('"');
