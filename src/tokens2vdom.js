@@ -28,10 +28,10 @@ function tokens2vdom(tokens) {
     }
 
     // 添加key
-    if (vdom['data']['key']) {
-      vdom['key'] = vdom['data']['key'];
-      delete vdom['data']['key'];
-    }
+    // if (vdom['data']['key']) {
+    //   vdom['key'] = vdom['data']['key'];
+    //   delete vdom['data']['key'];
+    // }
 
     if (token[4]) {
       vdom['text'] = token[token.length - 1];

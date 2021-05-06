@@ -67,7 +67,6 @@
       children: [
         {
           sel: "li",
-          key: "1",
           children: [{
             sel: "span",
             data: {
@@ -77,18 +76,18 @@
             },
             text: "&times;"
           }],
-          data: {},
+          data: {key: "1"},
           text: "宫保鸡丁"
         },
         {
           sel: "li",
-          key: "2",
           children: [{
             sel: "span",
             data: {
               class: {
                 del: true
-              }
+              },
+              key: "2",
             },
             text: "&times;"
           }],
