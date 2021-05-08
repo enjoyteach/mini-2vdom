@@ -15,7 +15,7 @@ function tokens2vdom(tokens) {
   for (let i = 0, len = tokens.length; i < len; i++) {
     const token = tokens[i];
     vdom['sel'] = token[1];
-    vdom['data'] = isArray(token[2]) ? token[3] : token[2];
+    vdom['data'] = token[3];
 
     // 解析类名
     if (vdom['data']['class']) {
@@ -41,8 +41,11 @@ function tokens2vdom(tokens) {
 
     vdom['elm'] = undefined;
     
-    const children = isArray(token[2]) ? token[2] : token[3];
-    if (!children) continue;
+    const children = token[2];
+    if (children.length === 0) {
+      vdom['children'] = undefined;
+      continue;
+    };
 
     vdom['children'] = [];
 

@@ -63,14 +63,8 @@ function nestTokens(tokens) {
         stack.push(token);
         // 由于进入了新的嵌套结构，新建一个数组保存嵌套结构
         // 并修改collector的指向
-        if (isEmptyObject(token[2])) {
-          token.splice(2, 0, []);
-          collector = token[2] = [];
-        } else {
           token.splice(2, 0, []);
           collector = token[2];
-        }
-
         break;
       case '/':
         // 出栈
