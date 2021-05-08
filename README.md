@@ -7,7 +7,7 @@
 ## 支持
 
 - 类似 ```<h2><small>123</small></h2>``` 的任意层嵌套标签
-- 类似```<ul loading class="list" style="width: 300px; color: red; border: 1px solid #fff;">```等属性的解析和提取
+- 类似 ```<ul loading class="list" style="width: 300px; color: red; border: 1px solid #fff;">``` 等属性的解析和提取
 
 ## 不支持
 - 根节点的多个标签并列，即只能有一个根标签
@@ -17,7 +17,7 @@
 
 ## 使用
 
-引入文件后会向全局暴露```toVDOM```函数, 用于将标签字符串转换为虚拟DOM对象
+引入文件后会向全局暴露 ```toVDOM``` 函数, 用于将标签字符串转换为虚拟DOM对象
 
 ```HTML
 <script src="/mini-2vdom.js"></script>
