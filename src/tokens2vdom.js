@@ -29,6 +29,8 @@ function tokens2vdom(tokens) {
     if (vdom['data']['key']) {
       vdom['key'] = vdom['data']['key'];
       delete vdom['data']['key'];
+    } else  {
+      vdom['key'] = undefined;
     }
 
     if (token[4]) {
