@@ -11,10 +11,13 @@ function propsParser(propsStr) {
     // 对单属性的处理
     const spaceIdx = key.indexOf(' ');
     if (spaceIdx !== -1) {
-      const k = key.replace(/\s+/g, ' ')
-         .split(' ')[0]
-      props[k] = true;
-      key = key.substring(spaceIdx).trim();
+      const keys = key.replace(/\s+/g, ' ').split(' ');
+
+      const len = keys.length;
+      for (let i = 0; i < len - 1; i++) {
+        props[keys[i]] = true;
+      }
+      key = keys[len - 1].trim();
     }
     scanner.scan('="');
 
