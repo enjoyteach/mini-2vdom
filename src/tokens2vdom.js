@@ -1,7 +1,5 @@
-import {isArray} from './utils';
 import classParser from './classParser';
 import styleParser from './styleParser';
-
 
 /**
  * 将toknes转换为虚拟DOM
